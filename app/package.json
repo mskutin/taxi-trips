@@ -1,0 +1,16 @@
+{
+  "name": "taxi-app",
+  "version": "1.0.0",
+  "description": "Web API provides taxi trips metrics",
+  "main": "src/app.js",
+  "author": "ms",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^8.1.0",
+    "express": "^4.17.1",
+    "http-errors": "^1.7.3",
+    "mongoose": "^5.6.10",
+    "morgan": "^1.9.1",
+    "winston": "^3.2.1"
+  }
+}
