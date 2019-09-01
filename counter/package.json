@@ -1,0 +1,11 @@
+{
+  "name": "counter",
+  "version": "1.0.0",
+  "description": "Metrics counter service - background process, provides up to date metrics for taxi trips data. ",
+  "main": "src/ingester.js",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^8.1.0",
+    "mongoose": "^5.6.10"
+  }
+}
