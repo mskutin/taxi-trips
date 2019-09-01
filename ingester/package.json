@@ -1,0 +1,12 @@
+{
+  "name": "ingester",
+  "version": "1.0.0",
+  "description": "Taxi Ingester - background pubsub listener, ingests incoming taxi trips data into db.",
+  "main": "src/ingester.js",
+  "license": "MIT",
+  "dependencies": {
+    "@google-cloud/pubsub": "^0.31.1",
+    "dotenv": "^8.1.0",
+    "mongoose": "^5.6.10"
+  }
+}
