@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: "{{ include "taxi-counter.fullname" . }}-test-connection"
+  labels:
+{{ include "taxi-counter.labels" . | indent 4 }}
+  annotations:
+    "helm.sh/hook": test-success
+spec:
+  containers:
+    - name: wget
+      image: busybox
+      command: ['wget']
+      args:  ['{{ include "taxi-counter.fullname" . }}:{{ .Values.service.port }}']
+  restartPolicy: Never
