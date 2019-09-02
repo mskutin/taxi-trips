@@ -21,7 +21,6 @@ async function run() {
   const createSubscription = async () => {
     const matchSubscriptionAndTopic = (s) => {
       if (s.length === 0) { return false }
-      console.log
       return s[0].name.split("/").reverse()[0] === subscriptionName &&
              s[0].metadata.topic === topic
     }
@@ -54,7 +53,6 @@ async function run() {
       passenger_count: message.passenger_count
     }
   }
-  let messageCount = 0
 
   const messageHandler = async (message) => {
     try {
@@ -62,7 +60,6 @@ async function run() {
       const mapped = mapMessageToModel(decoded)
       console.log(mapped)
       await saveToDB(mapped)
-      messageCount += 1
       message.ack()
     } catch (error) {
       console.error(error)

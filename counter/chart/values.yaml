@@ -2,7 +2,7 @@ replicaCount: 1
 
 image:
   repository: asia.gcr.io/gojek-assignment-251304/taxi-counter
-  tag: 2
+  tag: 6
   pullPolicy: IfNotPresent
 
 imagePullSecrets: []
