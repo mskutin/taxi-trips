@@ -6,8 +6,8 @@ const config = require('./config/config')
 
 const { general: { exitTimeout } } = config
 
-
 const calculateMetrics = async () => {
+  //TODO: move timer configuration env var
   const hourAgo = new Date(new Date().getTime() - (1000 * 60 * 60)).toISOString()
   const now = new Date().toISOString()
   const dropoff = {

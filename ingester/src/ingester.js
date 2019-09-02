@@ -11,6 +11,7 @@ const subscriberOptions = {
     maxMessages: maxInProgress,
   }
 }
+//TODO: make topic & subscription name configurable
 const topic = 'projects/pubsub-public-data/topics/taxirides-realtime'
 const subscriptionName = 'trips'
 
@@ -37,6 +38,7 @@ async function run() {
   console.info(`Subscriber to subscription ${subscriptionName} is ready to receive messages at a controlled volume of ${maxInProgress} messages.`)
 
   const saveToDB = async (document) => {
+    //TODO: Create outer iterator to write in batches
     await TripModel.collection.insertMany([document])
   }
   const mapMessageToModel = (message) => {
