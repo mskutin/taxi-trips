@@ -30,18 +30,29 @@ Assignment details and problem statement can be found [here](docs/ASSIGNMENT.md)
 
 ## Setup
 
-- Create GCE VM using `ubuntu-1604-xenial-v20190816` image, refer to `docs/create_vm.sh` script
-- Upload the repository codebase onto `${HOME}/trips` user dir of a new VM
-- Change workdir and run the installation script, setup may take around 12 minutes to be completed:
-  - `cd ${HOME}/trips`
-  - `bash ./install.sh` ~12min
-- Once script work is finished you can start quering metrics api with the following command:
-   `curl $(kubectl get svc | grep taxi-app | awk '{print $3}')/metrics`
-- `{ "count" : null, "updated_at" : Date }` output is normal, as amount of dropoff events is significantly less than `enroute` ones
+- Clone the repository
+- Run `bash install.sh` ~12min
+
+Once script work is finished you can start quering metrics api with the following command:
+
+`curl $(kubectl get svc | grep taxi-app | awk '{print $3}')/metrics`
+
+```json
+{
+  "updated_at": "2019-09-02T09:12:17.712Z",
+  "dropoff": {
+    "count": 152
+  }
+}
+```
+
+You may need to wait for a minute to let data get populated.
 
 Refer to screencast:
 
 [![asciicast](docs/cast.png)](https://asciinema.org/a/265563?t=2&speed=40&theme=solarized-dark&data-size=small)
+
+>Setup was tested on the VM created from `ubuntu-1604-xenial-v20190816` image, refer to `docs/create_vm.sh` script.
 
 ## Improvements
 
